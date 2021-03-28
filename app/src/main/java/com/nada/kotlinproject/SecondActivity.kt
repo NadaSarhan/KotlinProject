@@ -29,7 +29,7 @@ class SecondActivity : AppCompatActivity() {
         press3 = findViewById(R.id.btn_press_3)
         personListView = findViewById(R.id.listView)
 
-        //setText
+        //set text value
         view2.text = textValue
 
         //handle button click
