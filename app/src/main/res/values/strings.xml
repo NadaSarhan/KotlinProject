@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">KotlinProject</string>
     <string name="name">Enter name here!</string>
+    <string name="phone">Enter phone here!</string>
+    <string name="age">Enter age here!</string>
     <string name="press">Press!</string>
     <string name="view">name appear here!</string>
 </resources>
