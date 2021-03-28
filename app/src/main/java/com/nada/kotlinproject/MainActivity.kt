@@ -1,5 +1,6 @@
 package com.nada.kotlinproject
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -12,7 +13,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var press1: Button
     private lateinit var view1: TextView
     private lateinit var press2: Button
-    private lateinit var view2: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -23,15 +23,19 @@ class MainActivity : AppCompatActivity() {
         press1 = findViewById(R.id.btn_press_1)
         view1 = findViewById(R.id.textView_view_1)
         press2 = findViewById(R.id.btn_press_2)
-        view2 = findViewById(R.id.textView_view_2)
 
+        //handle buttons click
         press1.setOnClickListener {
             val givenName = name.text
             view1.text = "$givenName"
         }
         press2.setOnClickListener {
-            val givenName = name.text
-            view2.text = "$givenName"
+            //get text from editText
+            val givenName = name.text.toString()
+            //intent to start activity
+            val intent = Intent(this@MainActivity, SecondActivity::class.java)
+            intent.putExtra("value", givenName)
+            startActivity(intent)
         }
 
     }
